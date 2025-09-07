@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Form - AI Nutrition</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>AI Nutrition</h2>
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+
+    <section class="form-container">
+      <h1>Get Your Nutrition Recommendation</h1>
+      <form action="/dashboard/health-form" method="POST">
+        <h3>1. Personal Information</h3>
+        <label>Name</label>
+        <input type="text" name="name" required />
+
+        <label>Age</label>
+        <input type="number" name="age" required />
+
+        <label>Gender</label>
+        <select name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <h3>2. Body Metrics</h3>
+        <label>Height (cm)</label>
+        <input type="number" name="height" required />
+
+        <label>Weight (kg)</label>
+        <input type="number" name="weight" required />
+
+        <label>Activity Level</label>
+        <select name="activityLevel" required>
+          <option value="Sedentary">Sedentary</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Active">Active</option>
+        </select>
+
+        <h3>3. Health Information</h3>
+        <label>Medical Conditions</label>
+        <input
+          type="text"
+          name="medicalConditions"
+          placeholder="e.g. Diabetes, Hypertension"
+        />
+
+        <label>Allergies</label>
+        <input type="text" name="allergies" placeholder="e.g. Nuts, Dairy" />
+
+        <label>Medications</label>
+        <input type="text" name="medications" />
+
+        <h3>4. Dietary Preferences</h3>
+        <label>Diet Type</label>
+        <select name="dietType" required>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Non-Vegetarian">Non-Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Pescatarian">Pescatarian</option>
+        </select>
+
+        <label>Food Likes / Dislikes</label>
+        <input type="text" name="likesDislikes" placeholder="Optional" />
+
+        <h3>5. Goals</h3>
+        <select name="goals" required>
+          <option value="Weight Loss">Weight Loss</option>
+          <option value="Weight Gain">Weight Gain</option>
+          <option value="Maintain Weight">Maintain Weight</option>
+          <option value="Improve General Health">Improve General Health</option>
+          <option value="Manage Disease">Manage Disease</option>
+          <option value="Build Muscle">Build Muscle</option>
+        </select>
+
+        <h3>6. Optional / Advanced</h3>
+        <label>Sleep Pattern (hours per night)</label>
+        <input type="number" name="sleep" />
+
+        <label>Stress Level</label>
+        <select name="stress">
+          <option value="Low">Low</option>
+          <option value="Moderate">Moderate</option>
+          <option value="High">High</option>
+        </select>
+
+        <label>Local Food Availability</label>
+        <input type="text" name="localFood" placeholder="Optional" />
+
+        <button type="submit">Get Recommendation</button>
+      </form>
+    </section>
+  </body>
+</html>

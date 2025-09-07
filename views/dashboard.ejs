@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - AI Nutrition</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>AI Nutrition</h2>
+      <ul>
+        <li><a href="/dashboard/health-form">Get Recommendation</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+
+    <section class="dashboard">
+      <h1>Welcome, <%= user.username %> 👋</h1>
+      <p>Email: <%= user.email %></p>
+
+      <h2>Your Previous Recommendations</h2>
+      <% if (records.length === 0) { %>
+      <p>No health data submitted yet. Click "Get Recommendation" to start.</p>
+      <% } else { %> <% records.forEach(r => { %>
+      <div class="card">
+        <h3><%= r.name %> (Age: <%= r.age %>, Gender: <%= r.gender %>)</h3>
+        <p>
+          <strong>Height:</strong> <%= r.height %> cm |
+          <strong>Weight:</strong> <%= r.weight %> kg
+        </p>
+        <p><strong>Activity Level:</strong> <%= r.activityLevel %></p>
+        <p><strong>Medical Conditions:</strong> <%= r.medicalConditions %></p>
+        <p><strong>Allergies:</strong> <%= r.allergies %></p>
+        <p><strong>Diet Type:</strong> <%= r.dietType %></p>
+        <p><strong>Goals:</strong> <%= r.goals %></p>
+        <p><strong>Recommendations:</strong> <%= r.recommendations %></p>
+        <small>Submitted on: <%= r.createdAt.toDateString() %></small>
+      </div>
+      <% }) %> <% } %>
+    </section>
+  </body>
+</html>

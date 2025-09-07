@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - AI Nutrition</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>AI Nutrition</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+
+    <section class="form-container">
+      <h1>Create Account</h1>
+      <form action="/signup" method="POST">
+        <label>Username</label>
+        <input type="text" name="username" required />
+
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Password</label>
+        <input type="password" name="password" required />
+
+        <button type="submit">Signup</button>
+      </form>
+    </section>
+  </body>
+</html>
